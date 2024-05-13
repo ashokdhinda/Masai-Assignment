@@ -1,8 +1,10 @@
-let addcart= JSON.parse(localStorage.getItem("add-cart"))
-//console.log(addcart)
-
-addcart.forEach(function(ele){
-    let contanier = document.getElementById("contanier")
+let contanier = document.getElementById("contanier");
+let addcart = JSON.parse(localStorage.getItem("add-cart")) ||[]
+console.log(addcart)
+contanier.innerHTML="";
+addcart.map(function(ele,i){
+    console.log(ele)
+  
     let card = document.createElement("div")
      
     let id = document.createElement("h3")
@@ -17,19 +19,29 @@ addcart.forEach(function(ele){
     btn.textContent = "Remove"
     btn.addEventListener("click",function(){
 
-      remove(ele)
+      remove(ele,i)  //if u clicm on 3rd user, its  index => 2
     })
    
     
      card.append(id,h4,username,email,btn)
+     console.log(card)
      contanier.append(card)
     
     })  
-    let removeArr = localStorage.removeItem("remove-cart")|| [];
+    //let removeArr = localStorage.removeItem("remove-cart")|| [];
   
-function remove(ele){
+function remove(ele,i){
 //console.log("",ele)
-removeArr.pop(ele)
-localStorage.setItem("remove-cart",JSON.stringify(removeArr))
+let addcart= JSON.parse(localStorage.getItem("add-cart"))
+console.log(addcart)
+let fillterdData = addcart.filter((el,index)=>{
+  // i am returning the all the elements execpt clicked index (i) (i =2)
+  return i != index
+})
+
+localStorage.setItem("add-cart",JSON.stringify(fillterdData));
+console.log(fillterdData)
 alert("data remove in cart")
+window.location.reload()
+
 }

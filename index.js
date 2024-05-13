@@ -83,8 +83,9 @@ btn.addEventListener("click",function(){
  contanier.append(card)
 })  
 
-   let cartArr = JSON.parse(localStorage.getItem("add-cart"))|| [];
+  
 function storeDataIncart(ele){
+  let cartArr = JSON.parse(localStorage.getItem("add-cart"))|| []; 
 //console.log("add-cart",ele)
 cartArr.push(ele)
 localStorage.setItem("add-cart",JSON.stringify(cartArr))
