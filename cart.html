@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart page</title>
+  
+    
+</head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    background-color:aquamarine;
+    padding:  15px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;   
+ul{
+    display: flex;
+    justify-content:space-evenly;
+    font-size: 20px;
+  a{
+    text-decoration: none;
+  }
+}
+}
+#contanier{
+display: grid;
+grid-template-columns: repeat(5,1fr);
+padding: 30px;
+gap: 50px;
+div{
+    border: 1px solid blue;
+ border-radius: 5px;
+ text-align: center;
+ padding: 10px;
+} 
+button{
+    margin-top: 30px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    border: none;
+    background: #ffd814;
+    width: 100%;
+    cursor: pointer;
+}
+    }
+</style>
+<body>
+    <nav>
+        <ul>
+            <a href="index.html">Home</a>
+            <a href="">About</a>
+            <a href="cart.html">Cart</a>
+        </ul>
+       </nav> 
+       <div id="contanier"></div>
+</body>
+<script src="cart.js"></script>
+
+</html>
